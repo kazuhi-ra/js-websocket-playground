@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kazuhi-ra/js-websocket-playground/issues"
   },
-  "homepage": "https://github.com/kazuhi-ra/js-websocket-playground#readme"
+  "homepage": "https://github.com/kazuhi-ra/js-websocket-playground#readme",
+  "dependencies": {
+    "ws": "^7.4.0"
+  }
 }
