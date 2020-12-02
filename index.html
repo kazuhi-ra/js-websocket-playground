@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket</title>
+</head>
+
+<body>
+  <input type="button" value="送信">
+  <script>
+    const socket = new WebSocket('ws://127.0.0.1:3000')
+
+    socket.addEventListener('open', e => {
+      console.log('クライアント: 接続成功です')
+    })
+
+    socket.addEventListener('message', e => {
+      console.log('message: ', e.data)
+    })
+
+    document.addEventListener('DOMContentLoaded', e => {
+      document.querySelector('input').addEventListener('click', e => {
+        socket.send('hello')
+      })
+    })
+  </script>
+</body>
+
+</html>
