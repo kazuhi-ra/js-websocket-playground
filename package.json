@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kazuhi-ra/js-websocket-playground#readme",
   "dependencies": {
+    "nodemon": "^2.0.6",
     "socket.io": "^3.0.3",
     "ws": "^7.4.0"
   }
