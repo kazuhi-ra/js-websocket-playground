@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.io</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+  <ul id="messages"></ul>
+  <form id="message_form">
+    <input id="input_msg" autocomplete="off" /><button>Send</button>
+  </form>
+  <script>
+    'use strict'
+    const socket = io()
+
+    socket.on('test', (data, fn) => {
+      console.log(data)
+    })
+
+
+    document.querySelector('#message_form').addEventListener('submit', e => {
+      e.preventDefault()
+      socket.emit('message', document.querySelector('#input_msg').value)
+      document.querySelector('#input_msg').value = ''
+    })
+
+  </script>
+</body>
+
+</html>
