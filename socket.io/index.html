@@ -17,10 +17,9 @@
     'use strict'
     const socket = io()
 
-    socket.on('test', (data, fn) => {
+    socket.on('test', data => {
       console.log(data)
     })
-
 
     document.querySelector('#message_form').addEventListener('submit', e => {
       e.preventDefault()
@@ -28,6 +27,12 @@
       document.querySelector('#input_msg').value = ''
     })
 
+    socket.on('message', message => {
+      console.log('messageを受け取りました')
+      const messageNode = document.createElement("li")
+      messageNode.innerText = message
+      document.querySelector('#messages').appendChild(messageNode)
+    })
   </script>
 </body>
 
